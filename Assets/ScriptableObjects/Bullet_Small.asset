@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376e193b76c7e406088c3630ac070076, type: 3}
+  m_Name: Bullet_Small
+  m_EditorClassIdentifier: 
+  id: 0
+  sprite: {fileID: -1183474109, guid: ace42c65f4325177b9c9cd4f951d40ef, type: 3}
+  type: bullet_small_projectile
+  speed: 8
+  lifespan: 3
+  damage: 1
