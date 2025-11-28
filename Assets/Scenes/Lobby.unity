@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430847132624135140, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_Name
-      value: SoundHintLevel_4
+      value: SoundHint_Level_4
       objectReference: {fileID: 0}
     - target: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61589,6 +61589,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1 &277161444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277161446}
+  - component: {fileID: 277161445}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &277161445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277161444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee5aadaa788bce48b80ccae5d6fad4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &277161446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277161444}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.851648, y: -0.37200612, z: 0.023590585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &521426657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
@@ -61604,7 +61648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430847132624135140, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_Name
-      value: SoundHintLevel_WrongCue
+      value: SoundHint_CueWrong
       objectReference: {fileID: 0}
     - target: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61837,7 +61881,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430847132624135140, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_Name
-      value: SoundHintLevel_2
+      value: SoundHint_Level_2
       objectReference: {fileID: 0}
     - target: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62635,7 +62679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430847132624135140, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_Name
-      value: SoundHintLevel_1
+      value: SoundHint_Level1
       objectReference: {fileID: 0}
     - target: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -133250,7 +133294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430847132624135140, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_Name
-      value: SoundHintCancel
+      value: SoundHint_CancelCue
       objectReference: {fileID: 0}
     - target: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -133347,8 +133391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a304fe40cc49c4faa8d8e0389c1d019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 1634270324}
-  cancelDelayTime: 5
+  cancelAfterTime: 5
 --- !u!1 &2065408920
 GameObject:
   m_ObjectHideFlags: 0
@@ -133762,7 +133805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917901112476331535, guid: 78ca5038668b58b75bd171f7c58ef526, type: 3}
       propertyPath: m_Name
-      value: SoundMisdirects
+      value: SoundManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -133821,9 +133864,13 @@ PrefabInstance:
       propertyPath: mixer
       value: 
       objectReference: {fileID: 1634270324}
+    - target: {fileID: 4932086381407182758, guid: ce7931aeec794f261912d75594f3a232, type: 3}
+      propertyPath: volume
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5221165702241410525, guid: ce7931aeec794f261912d75594f3a232, type: 3}
       propertyPath: m_Name
-      value: SoundHintStarter
+      value: SoundHint_Level0_Starter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -133840,7 +133887,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430847132624135140, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_Name
-      value: SoundHintLevel_3
+      value: SoundHint_Level_3
       objectReference: {fileID: 0}
     - target: {fileID: 6189698297622007983, guid: 5451cca0a04421c1d93cf1268e864b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -134166,3 +134213,4 @@ SceneRoots:
   - {fileID: 7202852266153064206}
   - {fileID: 914831469}
   - {fileID: 810723574}
+  - {fileID: 277161446}
