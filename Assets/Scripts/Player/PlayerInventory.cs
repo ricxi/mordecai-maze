@@ -9,7 +9,6 @@ public class PlayerInventory : MonoBehaviour
     private bool hasSecretKey;
     public bool HasSecretKey => hasSecretKey;
 
-
     void Start()
     {
         if (playerUI == null)

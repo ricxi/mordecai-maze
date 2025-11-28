@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: LobbyAudioClips
   m_EditorClassIdentifier: 
   BellSound: {fileID: 8300000, guid: 22153d02b91455a7b82ab8868402f9b7, type: 3}
+  LockedDoor: {fileID: 8300000, guid: d5a48da18acb5bb6f990999dab127cc6, type: 3}

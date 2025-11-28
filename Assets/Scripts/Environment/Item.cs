@@ -16,8 +16,7 @@ public class Item : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        if (sr == null)
-            sr = GetComponent<SpriteRenderer>();
+        if (sr == null) sr = GetComponent<SpriteRenderer>();
 
         _currentHealth = maxHealth;
     }

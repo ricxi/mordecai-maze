@@ -6,4 +6,5 @@ using UnityEngine;
 public class AudioClips : ScriptableObject
 {
     public AudioClip BellSound;
+    public AudioClip LockedDoor;
 }

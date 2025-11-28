@@ -5,8 +5,13 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-    [SerializeField] private AudioSource audioSource; // Bell Hint Audio Source
+    [SerializeField] private AudioSource audioSource; // Audio Source for constantly playing sfx: e.g.: Bell Hint Audio Source
+    [SerializeField] private AudioSource audioSourceOneShot; // Audio Source for one shot sounds
     [SerializeField] private float defaultVolume = 0.05f;
+    [SerializeField] private float defaultVolumeOneShot = 0.1f;
+
+    private bool _isOneShotLocked = false;
+    private Coroutine _oneShotCooldownCoHandler = null;
 
     private void Awake()
     {
@@ -21,8 +26,22 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (audioSource == null || audioSourceOneShot == null)
+        {
+            AudioSource[] audioSources = GetComponentsInChildren<AudioSource>();
+            if (audioSources.Length > 2)
+            {
+                Debug.LogWarning("SoundManager expected two child audio sources, but received " + audioSources.Length);
+                return;
+            }
+
+            audioSource = audioSources[0];
+            audioSourceOneShot = audioSources[1];
+        }
+
         audioSource.volume = defaultVolume;
+        audioSourceOneShot.volume = defaultVolumeOneShot;
+        if (!audioSource.loop) audioSource.loop = true;
     }
 
     public void Play(AudioClip audioClip)
@@ -54,5 +73,25 @@ public class SoundManager : MonoBehaviour
     public void ClearAudioClips()
     {
         audioSource.clip = null;
+    }
+
+    public void PlayOneShot(AudioClip audioClip)
+    {
+        if (_isOneShotLocked) return;
+        audioSourceOneShot.PlayOneShot(audioClip);
+
+        if (_oneShotCooldownCoHandler != null)
+        {
+            StopCoroutine(_oneShotCooldownCoHandler);
+            _oneShotCooldownCoHandler = null;
+        }
+        _oneShotCooldownCoHandler = StartCoroutine(OneShotCooldown(audioClip.length));
+    }
+
+    private IEnumerator OneShotCooldown(float duration)
+    {
+        _isOneShotLocked = true;
+        yield return new WaitForSecondsRealtime(duration);
+        _isOneShotLocked = false;
     }
 }
