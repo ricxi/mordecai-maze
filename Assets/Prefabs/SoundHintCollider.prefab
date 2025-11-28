@@ -90,5 +90,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c902169077370f2c996fb9c47de2192d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
-  defaultVolume: 0.05
+  audioClips: {fileID: 11400000, guid: 871f8eb8772dfcaa4abf0771c099b023, type: 2}
+  volume: 0

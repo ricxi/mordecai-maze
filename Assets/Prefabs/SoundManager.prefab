@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8362929920461756140}
   - component: {fileID: 6794818567396451138}
   m_Layer: 0
-  m_Name: SoundMisdirects
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 22153d02b91455a7b82ab8868402f9b7, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.07
   m_Pitch: 1
@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8362929920461756140}
+  defaultVolume: 0.05

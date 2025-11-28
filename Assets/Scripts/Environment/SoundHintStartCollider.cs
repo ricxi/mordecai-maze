@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SoundHintCollider : MonoBehaviour
 {
+    [SerializeField] private AudioClips audioClips;
     [SerializeField] private float volume;
     private BoxCollider2D _boxCollider;
 
@@ -20,7 +21,8 @@ public class SoundHintCollider : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                SoundManager.Instance.PlayFirst(volume);
+                SoundManager.Instance.Play(audioClips.BellSound);
+                SoundManager.Instance.SetVolumeTo(volume);
             }
         }
     }

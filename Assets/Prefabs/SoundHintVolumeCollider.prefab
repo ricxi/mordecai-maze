@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7009310175011813432}
   - component: {fileID: 8813626369853923697}
   m_Layer: 0
-  m_Name: SoundHintAdjustCollider
+  m_Name: SoundHintVolumeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
