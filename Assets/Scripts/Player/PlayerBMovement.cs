@@ -15,12 +15,13 @@ public class PlayerBMovement : MonoBehaviour
 
     void Start()
     {
-        // rb = GetComponent<Rigidbody2D>();
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         GetInput();
+        // Flip();
     }
 
     void FixedUpdate()
