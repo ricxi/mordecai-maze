@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public AudioClip gunshotClip;
     public Transform gunpoint;
     public Gun gun;
     private float _xInput;
@@ -24,7 +25,10 @@ public class PlayerShoot : MonoBehaviour
         }
 
         if (_isFiring)
+        {
+            SoundManager.Instance.PlayOneShot(gunshotClip);
             gun.Fire();
+        }
     }
 
     private void GetInput()

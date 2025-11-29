@@ -133975,6 +133975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710c537f016a88fc6af684fcb59b643c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunshotClip: {fileID: 8300000, guid: 777879dd3f9c06898ba7d729437ab87d, type: 3}
   gunpoint: {fileID: 2144829064342961314}
   gun: {fileID: 8912424920586755775}
 --- !u!114 &5091157227166057030
