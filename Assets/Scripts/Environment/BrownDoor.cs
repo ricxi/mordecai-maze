@@ -6,23 +6,35 @@ public class BrownDoor : MonoBehaviour, IInteractable
 {
     [SerializeField] AudioClips audioClips;
     [SerializeField] private Animator animator;
-    [SerializeField] private bool isLocked;
+    [SerializeField] private PlayerUIHandler playerUI;
+    private bool _isLocked;
 
     void Start()
     {
         if (animator == null) animator = GetComponent<Animator>();
-        isLocked = true;
+        if (playerUI == null) Debug.LogError("Missing PlayerUIManager reference");
+
+        _isLocked = true;
     }
 
     public void Interact()
     {
-        if (!isLocked)
+        if (!_isLocked)
         {
             animator.SetBool("isOpen", true);
         }
         else
         {
             SoundManager.Instance.PlayOneShot(audioClips.LockedDoor);
+            playerUI.DisplayHintText("The door appears to be locked.");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerUI.DisplayHintText("Press X to interact with the door.");
         }
     }
 }

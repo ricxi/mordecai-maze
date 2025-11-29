@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void GetInput()
     {
-        _isInteracting = Input.GetKey(KeyCode.Space);
+        _isInteracting = Input.GetKey(KeyCode.X);
     }
 
     private void Interact()
