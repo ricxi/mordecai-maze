@@ -8,6 +8,7 @@ public class BrownDoor : MonoBehaviour, IInteractable
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerUIHandler playerUI;
     private bool _isLocked;
+    private bool _showHelpMessage;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class BrownDoor : MonoBehaviour, IInteractable
         if (playerUI == null) Debug.LogError("Missing PlayerUIManager reference");
 
         _isLocked = true;
+        _showHelpMessage = true;
     }
 
     public void Interact()
@@ -34,7 +36,11 @@ public class BrownDoor : MonoBehaviour, IInteractable
     {
         if (collision.CompareTag("Player"))
         {
-            playerUI.DisplayHintText("Press X to interact with the door.");
+            if (_showHelpMessage)
+            {
+                playerUI.DisplayHintText("Press X to interact with the door.");
+                _showHelpMessage = false;
+            }
         }
     }
 }

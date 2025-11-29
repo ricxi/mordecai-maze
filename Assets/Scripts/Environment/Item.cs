@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, IDamageable
 {
+    [SerializeField] private AudioClip explosionClip;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite damagedSprite;
     [SerializeField] private GameObject explosionPrefab; // animation for bullet impact effect on collision
@@ -37,6 +38,7 @@ public class Item : MonoBehaviour, IDamageable
             {
                 _isDestroyed = true;
 
+                SoundManager.Instance.PlayOneShot(explosionClip);
                 GameObject explosionFx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(explosionFx, 0.7f);
 

@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour
 
         if (_isFiring)
         {
-            SoundManager.Instance.PlayOneShot(gunshotClip);
+            SoundManager.Instance.PlayOne(gunshotClip);
             gun.Fire();
         }
     }

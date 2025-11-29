@@ -134137,6 +134137,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7680069798336857081, guid: 2aa9c9389f6b5478ab07c9a404f4351c, type: 3}
+      propertyPath: explosionClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3b5d4e303642221e8304af5f12f7b40, type: 3}
+    - target: {fileID: 7680069798336857081, guid: 2aa9c9389f6b5478ab07c9a404f4351c, type: 3}
       propertyPath: itemDropPrefab
       value: 
       objectReference: {fileID: 4630638181058779878, guid: 1d97e580d2d38a5c4a843152ec5377f7, type: 3}

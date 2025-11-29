@@ -14,7 +14,7 @@ public class NextLevelTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            PlayerBMovement player = collision.gameObject.GetComponent<PlayerBMovement>();
             if (player != null)
             {
                 if (playerFreezeCoHandler != null)

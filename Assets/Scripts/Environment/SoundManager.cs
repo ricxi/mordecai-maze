@@ -75,6 +75,12 @@ public class SoundManager : MonoBehaviour
         audioSource.clip = null;
     }
 
+    public void PlayOne(AudioClip audioClip)
+    {
+        if (audioClip == null) return;
+        audioSourceOneShot.PlayOneShot(audioClip);
+    }
+
     public void PlayOneShot(AudioClip audioClip)
     {
         if (_isOneShotLocked) return;
