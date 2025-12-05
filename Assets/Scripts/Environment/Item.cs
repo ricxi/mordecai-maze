@@ -38,7 +38,7 @@ public class Item : MonoBehaviour, IDamageable
             {
                 _isDestroyed = true;
 
-                SoundManager.Instance.PlayOneShot(explosionClip);
+                SoundManager.Instance.PlayOne(explosionClip);
                 GameObject explosionFx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(explosionFx, 0.7f);
 
